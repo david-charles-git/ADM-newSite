@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7e00f66b.css",
+    "main.js": "/static/js/main.22686c35.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/googlePartner_logo.svg": "/static/media/googlePartner_logo.ce5125562cc5094a3815a0438288e63c.svg",
+    "static/media/bingPartner_logo.svg": "/static/media/bingPartner_logo.dc0c8e702b4fe161c52297295ef10605.svg",
+    "static/media/ADM_Logo_Black.svg": "/static/media/ADM_Logo_Black.d78aa467cfe5b4b6d85fa7652e5f42a7.svg",
+    "static/media/whatsApp_icon.svg": "/static/media/whatsApp_icon.790a379dc258e85bcc5c43ea19832d44.svg",
+    "static/media/phone_icon.svg": "/static/media/phone_icon.ee72119a08f9d56ac33f6143d3bb224f.svg",
+    "static/media/quotationClose.svg": "/static/media/quotationClose.eb1a7597e6d793e85b721c5e2b0f4eff.svg",
+    "static/media/quotationOpen.svg": "/static/media/quotationOpen.e586f0dfc65c76cefafa40a0e7d5ede3.svg",
+    "static/media/email_icon.svg": "/static/media/email_icon.abee53ca3efec54b17c64f72892c9b53.svg",
+    "static/media/burgerMenuClose_icon.svg": "/static/media/burgerMenuClose_icon.929aa0abe24adfbe1fb6168dee3dc9e1.svg",
+    "static/media/burgerMenuOpen_icon.svg": "/static/media/burgerMenuOpen_icon.929aa0abe24adfbe1fb6168dee3dc9e1.svg",
+    "index.html": "/index.html",
+    "main.7e00f66b.css.map": "/static/css/main.7e00f66b.css.map",
+    "main.22686c35.js.map": "/static/js/main.22686c35.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e00f66b.css",
+    "static/js/main.22686c35.js"
+  ]
+}

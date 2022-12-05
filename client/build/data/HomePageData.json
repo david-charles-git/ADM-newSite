@@ -1,0 +1,69 @@
+{
+    "homePageData": {
+        "introSection" : {
+            "backgroundImage_1" : "./images/introSection_1.png",
+            "backgroundImage_2" : "./images/introSection_2.png",
+            "title_1" : "Add the strategic and creative fire-power of an advertising agency, to the precision and incision of a digital marketing agency,  to the flexibility and responsiveness of an in-house team.",
+            "title_2" : "And then you get us.",
+            "copy_1" : "Take technology.<br />Add marketing nous,<br />creativity and a healthy <br />dose of entrepreneurial spirit.<br />Take away smoke mirrors<br />and arrogance.",
+            "linkCopy" : "How can we help",
+            "linkType" : "internalLink",
+            "linkHref" : "#"
+        },
+        "ourWorkSection" : {
+            "title" : "Our Work",
+            "carouselData" : {
+                "data" : {
+                    "carouselHasArrows" : true,
+                    "carouselHasDots" : true,
+                    "carouselViewAllCopy" : "Find out more",
+                    "carouselViewAllType" : "internalLink",
+                    "carouselViewAllHref" : "/"
+                }
+            },
+            "carouselItems" : [
+                {
+                    "data" : {
+                        "cardLogoImage" : "/images/ASP_logo.png",
+                        "cardImage" : "/images/ASP_blogImage.png",
+                        "cardLinkType" : "internalLink",
+                        "cardLinkHref" : "/",
+                        "cardBackgroundColor" : "#000",
+                        "cardContent" : "Adopting a brand-centric approach to marketing, <span className='tilt' style={{ backgroundColor : '#F0BEC9' }}>driving growth in sales</span> & margins in luxury retail"
+                    }
+                },
+                {
+                    "data" : {
+                        "cardLogoImage" : "/images/ASP_logo.png",
+                        "cardImage" : "/images/ASP_blogImage.png",
+                        "cardLinkType" : "internalLink",
+                        "cardLinkHref" : "/",
+                        "cardBackgroundColor" : "#000",
+                        "cardContent" : "Adopting a brand-centric approach to marketing, <span className='tilt' style={{ backgroundColor : '#F0BEC9' }}>driving growth in sales</span> & margins in luxury retail"
+                    }
+                },
+                {
+                    "data" : {
+                        "cardLogoImage" : "/images/ASP_logo.png",
+                        "cardImage" : "/images/ASP_blogImage.png",
+                        "cardLinkType" : "internalLink",
+                        "cardLinkHref" : "/",
+                        "cardBackgroundColor" : "#000",
+                        "cardContent" : "Adopting a brand-centric approach to marketing, <span className='tilt' style={{ backgroundColor : '#F0BEC9' }}>driving growth in sales</span> & margins in luxury retail"
+                    }
+                }
+            ]
+
+        },
+        "AboutSection" : {
+
+        },
+        "TestimonialSection" : {
+
+        },
+        "BlogSection" : {
+
+        }
+    }
+
+}
