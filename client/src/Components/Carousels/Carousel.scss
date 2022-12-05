@@ -329,6 +329,7 @@
     }
 
     .SlideCarousel {
+        container: slideCarousel / inline-size;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 50px;
@@ -339,11 +340,12 @@
         >.outer {
             max-width: 1440px;
             width: 90%;
-
+            
             >.inner {
                 display: grid;
-                grid-template-columns: repeat(3, 800px);
+                grid-template-columns: repeat(3, auto);
                 grid-gap: 100px;
+                grid-area: carousel;
                 width: auto;
                 max-height: 700px;
                 align-content: center;
@@ -353,6 +355,7 @@
 
                 .item {
                     height: 550px;
+                    width: 800px;
 
                 }
             }
@@ -505,9 +508,9 @@
         &.hasArrows.hasDots {
             >.outer {
                 max-width: 1740px;
-                width: 95%;
+                width: 90%;
                 display: grid;
-                grid-template-columns: 50px 1fr 50px;
+                grid-template-columns: 50px calc(100% - 300px) 50px;
                 grid-template-areas:
                     "arrowLeft carousel arrowRight"
                     "dots dots dots";
@@ -583,6 +586,20 @@
             }
         }
     }
+}
+
+@container slideCarousel (inline-size >= 1740px) {
+
+}
+
+@container slideCarousel (inline-size < 1740px) {
+    .outer {
+        grid-template-columns: 50px calc(90vw - 300px) 50px !important;
+    }
+}
+
+@media (max-width: $tablet) {
+    
 }
 
 @media only screen and (max-width: $screenBreakTabletSmall) {

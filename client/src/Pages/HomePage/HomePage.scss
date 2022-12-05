@@ -366,6 +366,47 @@
 					}
 				}
 			}
+
+			.OurWorkSection {
+				>.inner {
+					.SlideCarousel {
+						> .outer {
+							grid-template-columns: 1fr !important;
+							grid-template-areas: "carousel" "dots";
+							width : 95%;
+
+							.arrowContainer {
+								display: none;
+							}
+
+							>.inner {
+								grid-gap: 40px;
+
+								.item {
+									width: 80vw;
+									max-width: 350px;
+									height: 420px;
+				
+									.SlideCarouselBlogCard {
+										>.inner {
+											.contentContainer {
+												>.inner {
+													p {
+														color: #ffffff;
+														font-size: 30px;
+														line-height: 40px;
+														padding: 10px;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
