@@ -5,106 +5,104 @@
 
 @import "../../Utilities/sassVariables";
 
-@media only screen and (max-width: $screenBreakMax) {
-    .Grid {
-        >.outer {
+.Grid {
+    >.outer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
+        >.inner {
             display: grid;
             grid-template-columns: 1fr;
-            grid-gap: 50px;
+            grid-gap: 30px;
             align-content: center;
             justify-content: center;
             align-items: center;
+            text-align:center;
+
+            >.item {
+                display: none;
+                height: 100%;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+
+        >.paginationContainer {
+            padding: 0 5%;
 
             >.inner {
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-gap: 30px;
-                align-content: center;
-                justify-content: center;
-                align-items: center;
-                text-align:center;
+                max-width: 1440px;
+                text-align: center;
 
-                >.item {
-                    display: none;
-                    height: 100%;
+                >.Button {
+                    >.outer {
+                        display: inline-block;
+                        width: auto;
 
-                    &.active {
-                        display: block;
+                        >.inner {
+                            display: inline-block;
+                            width: auto;
+
+                            p {
+                                font-weight: 600;
+                            }
+
+                            a {
+                                font-weight: 600;
+                            }
+                        }
                     }
                 }
             }
 
-
-            >.paginationContainer {
-                padding: 0 5%;
-
-                >.inner {
-                    max-width: 1440px;
-                    text-align: center;
-
+            &.link {
+                >.inner {    
                     >.Button {
                         >.outer {
-                            display: inline-block;
-                            width: auto;
-
-                            >.inner {
-                                display: inline-block;
-                                width: auto;
-
-                                p {
-                                    font-weight: 600;
-                                }
-
+                            >.inner {                                
                                 a {
-                                    font-weight: 600;
+                                    display: inline-block;
+                                    width: auto;
+                                    padding: 0 40px;
+                                    color: $clrMustard;
                                 }
                             }
                         }
                     }
                 }
+            }
 
-                &.link {
-                    >.inner {    
-                        >.Button {
-                            >.outer {
-                                >.inner {                                
-                                    a {
-                                        display: inline-block;
-                                        width: auto;
-                                        padding: 0 40px;
-                                        color: $clrMustard;
-                                    }
+            &.loadMore {
+                >.inner {    
+                    >.Button {
+                        >.outer {
+                            >.inner {                                
+                                p {
+                                    display: inline-block;
+                                    width: auto;
+                                    padding: 0 40px;
+                                    color: $clrMustard;
                                 }
                             }
                         }
                     }
                 }
+            }
 
-                &.loadMore {
-                    >.inner {    
-                        >.Button {
-                            >.outer {
-                                >.inner {                                
-                                    p {
-                                        display: inline-block;
-                                        width: auto;
-                                        padding: 0 40px;
-                                        color: $clrMustard;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            &.paged {
+                >.inner {    
+                    >.Button {
+                        >.outer {
+                            >.inner {
+                                p {
 
-                &.paged {
-                    >.inner {    
-                        >.Button {
-                            >.outer {
-                                >.inner {
-                                    p {
-
-                                    }
                                 }
                             }
                         }
@@ -112,20 +110,60 @@
                 }
             }
         }
+    }
 
+    &.grid-3-3-1 {
+        >.outer {
+            >.inner {
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 100px;
+            }
+        }
+    }
+
+    &.SingleColumnGrid {
+        >.outer {
+            >.inner {
+                grid-gap: 0;
+            }
+        }
+    }
+}
+
+@media (max-width : $tablet) {
+    .Grid {
         &.grid-3-3-1 {
             >.outer {
                 >.inner {
                     grid-template-columns: repeat(3, 1fr);
-                    grid-gap: 120px;
+                    grid-gap: 50px;
                 }
             }
         }
+    }
+}
 
-        &.SingleColumnGrid {
+@media (max-width : $mobileLarge) {
+    .Grid {
+        &.grid-3-3-1 {
             >.outer {
                 >.inner {
-                    grid-gap: 0;
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-gap: 30px;
+
+                    .item {
+                        display: inline-block;
+                        width: auto;
+                        max-width: 300px;
+                    }
+
+                    .item:nth-child(odd) {
+                        margin-right:-5%;
+                    }
+
+                    .item:nth-child(even) {
+                        margin-left: 5%;
+                    }
                 }
             }
         }

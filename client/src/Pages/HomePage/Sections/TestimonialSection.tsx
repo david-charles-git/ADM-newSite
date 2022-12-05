@@ -4,7 +4,8 @@
 */
 
 //Dependencies
-import React from "react";
+import React, { useState, useEffect } from "react";
+import useContentful from "../../../Utilities/contentfulHooks";
 
 //Components
 import TestimonialCard from "../../../Components/Cards/TestimonialCard";
@@ -15,6 +16,28 @@ import { TestimonialSectionInterface } from "../HomePageInterfaces";
 
 //Component
 const TestimonialSection : React.FC<TestimonialSectionInterface> = (props : TestimonialSectionInterface) => {
+    //Properties
+	const { getTestimonials } : any = useContentful();
+
+    //States
+	const [testimonials, setTestimonials] = useState<Array<any>>([]);
+
+    //Effects
+    useEffect(() => {
+		getTestimonials()
+			.then(
+				(response : Array<any>) => { 
+					const newArray = response || [];
+
+					setTestimonials(newArray);
+				}
+			)
+			.catch(
+                (error : any) => { console.log(error); }
+            )
+	}, []);
+
+
     return (
         <section className="TestimonialSection">
             <div className="inner"> 
@@ -23,7 +46,20 @@ const TestimonialSection : React.FC<TestimonialSectionInterface> = (props : Test
                     carouselHasArrows : true,
                     carouselHasDots : true,
                 }}>
-                    <TestimonialCard data={{
+
+                    {
+                        testimonials.map((testimonial : any, key : number) => {
+                            return (
+                                <TestimonialCard key={ key } data={{
+                                    cardTitle : testimonial.excerptTitle,
+                                    cardCopy : testimonial.excerptCopy,
+                                    cardAuthor : testimonial.author,
+                                    cardBackgroundColor : "#FCF3D4"
+                                }} />
+                            )
+                        })
+                    }
+                    {/* <TestimonialCard data={{
                         cardTitle : "addmustard have worked with us across all channels and platforms to deliver highly successful digital performance,",
                         cardCopy : "improved customer experience and increased efficiency of our digital marketing. They have integrated with our team and have completely aligned themselves with our strategy." ,
                         cardAuthor : "Michael Baulk - Marsh & Parsons Chairman",
@@ -56,7 +92,7 @@ const TestimonialSection : React.FC<TestimonialSectionInterface> = (props : Test
                         cardCopy : "the growth of our B2C business through a range of digital channels, as well as enhancing our online user experience. The results of the work has been impressive, with significant growth in revenue and improved efficiency from all of our marketing channels.”" ,
                         cardAuthor : "John Wimbleton - Chairman",
                         cardBackgroundColor : "#FCF3D4"
-                    }} />
+                    }} /> */}
                 </StackCarousel>
             </div>
         </section>

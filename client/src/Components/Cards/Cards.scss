@@ -27,6 +27,10 @@
                 >.inner {
                     display: grid;
                     grid-template-columns: 1fr;
+                    grid-gap: 20px;
+                    justify-content: start;
+                    align-content: center;
+                    align-items: center;
 
                     h3 {
                         font-family: $fntDisplay;
@@ -36,7 +40,7 @@
                         color: $clrWhite;
                         text-align: left;
                         display: -webkit-box;
-                        -webkit-line-clamp: 5;
+                        -webkit-line-clamp: 6;
                         -webkit-box-orient: vertical;  
                         overflow: hidden;
                     }
@@ -54,7 +58,8 @@
                                 display: inline-block;
                                 width: auto;
                                 vertical-align: middle;
-                                margin-right: 20px;
+                                margin-right: 10px;
+                                margin-bottom: 5px;
 
                                 >.inner {
                                     display: inline-block;
@@ -100,7 +105,7 @@
                 >.outer {  
                     display: inline-flex;
                     width: auto;
-                    transform: translateY(50%);
+                    transform: translateY(75%);
 
                     >.inner {
                         display: inline-block;
@@ -135,7 +140,7 @@
                     >.inner {
                         h3 {
                             display: -webkit-box;
-                            -webkit-line-clamp: 2;
+                            -webkit-line-clamp: 3;
                             -webkit-box-orient: vertical;  
                             overflow: hidden;
                         }
@@ -156,14 +161,17 @@
 
     .TestimonialCard {
         >.inner {
-            .tilt {
-                width: 110%;
-                left: -5%;
+            > .tiltCotnainer {
+                .tilt {
+                    width: 110%;
+                    left: -5%;
 
-                >.inner {                    
-                    border: 1px solid $clrMustard;
+                    >.inner {                    
+                        border: 1px solid $clrMustard;
+                    }
                 }
             }
+
             .backgroundContainer {
                 position: absolute;
                 height: 100%;
@@ -210,10 +218,6 @@
                         letter-spacing: 1px;
                         font-weight: 600;
                     }
-
-                    p {
-                        line-height: 28px;
-                    }
                 }
             }
             .cardAuthorContainer {
@@ -229,9 +233,12 @@
                 >.inner {
                     display: inline-block;
                     width: auto;
+                    max-width: 80%;
                     transform: translateY(100%);
 
                     p {
+                        text-align: center;
+                        padding: 10px;
                         font-weight: 600;
                     }
                 }
@@ -393,101 +400,167 @@
     }
 }
 
-@media only screen and (max-width: $screenBreakDesktopSmall) {
-    .BlogCard {
-        >.inner {
-            .contentContainer {
-                padding: 20px;
+@media (max-width : $laptopLarge) {
 
-                >.inner {
-                    h3 {
-                        font-size: 30px;
-                        line-height: 40px;
-                    }
-                }
-            }
-        }
-    }
 }
 
-@media only screen and (max-width: $screenBreakTablet) {
-    .BlogCard {
-        >.inner {
-            .contentContainer {
-                padding: 20px;
+@media (max-width : $laptopSmall) {
 
-                >.inner {
-                    h3 {
-                        font-size: 25px;
-                        line-height: 35px;
-                    }
-                }
-            }
-        }
-    }
 }
 
-@media only screen and (max-width: $screenBreakTabletSmall) {
-    .BlogCard {
-        >.inner {
-            .contentContainer {
-                padding: 40px;
-            }
-        }
-    }
+@media (max-width : $tablet) {
+	
+}
 
-    .SlideCarouselBlogCard {
-        >.inner {
-            .contentContainer {
-                >.inner {
-                    p {
-                        font-size: 30px;
-                        line-height: 40px;
-                    }
-                }
-            }
-        }
-    }
-
+@media (max-width : $mobileLarge) {
     .TestimonialCard {
         >.inner {
+            > .tiltContainer {
+                .tilt {
+                    width: 100%;
+                    left: -0%;
+                    height: 110%;
+                    top: -5%;
+                }
+            }
+
             .backgroundContainer {
                 >.inner {
-                    .ImageContainer {
-                        >.inner {
-                            height: 50px;
-                            
+                    padding: 20px;
+
+                    >.ImageContainer {
+                        img {
+                            height: 60px;
                         }
                     }
                 }
             }
 
             .contentContainer {
-                padding: 30px;
-
                 >.inner {
                     h3 {
-                        font-size: 25px;
-                        line-height: 35px;
+                        text-align: center;
                     }
+
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
+
+            .cardAuthorContainer {
+                >.inner {
+                    max-width: 300px;
+                    transform: translateY(75%);
                 }
             }
         }
     }
 }
 
-@media only screen and (max-width: $screenBreakMobile) {
-    .BlogCard {
-        >.inner {
-            
-        }
-    }
+@media (max-width : $mobileMedium) {
+	
 }
 
-@media only screen and (max-width: $screenBreakMobileSmall) {
-    .BlogCard {
-        >.inner {
-            
-        }
-    }
+@media (max-width : $mobileSmall) {
+	
 }
+
+// @media only screen and (max-width: $screenBreakDesktopSmall) {
+//     .BlogCard {
+//         >.inner {
+//             .contentContainer {
+//                 padding: 20px;
+
+//                 >.inner {
+//                     h3 {
+//                         font-size: 30px;
+//                         line-height: 40px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: $screenBreakTablet) {
+//     .BlogCard {
+//         >.inner {
+//             .contentContainer {
+//                 padding: 20px;
+
+//                 >.inner {
+//                     h3 {
+//                         font-size: 25px;
+//                         line-height: 35px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: $screenBreakTabletSmall) {
+//     .BlogCard {
+//         >.inner {
+//             .contentContainer {
+//                 padding: 40px;
+//             }
+//         }
+//     }
+
+//     .SlideCarouselBlogCard {
+//         >.inner {
+//             .contentContainer {
+//                 >.inner {
+//                     p {
+//                         font-size: 30px;
+//                         line-height: 40px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     .TestimonialCard {
+//         >.inner {
+//             .backgroundContainer {
+//                 >.inner {
+//                     .ImageContainer {
+//                         >.inner {
+//                             height: 50px;
+                            
+//                         }
+//                     }
+//                 }
+//             }
+
+//             .contentContainer {
+//                 padding: 30px;
+
+//                 >.inner {
+//                     h3 {
+//                         font-size: 25px;
+//                         line-height: 35px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: $screenBreakMobile) {
+//     .BlogCard {
+//         >.inner {
+            
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: $screenBreakMobileSmall) {
+//     .BlogCard {
+//         >.inner {
+            
+//         }
+//     }
+// }

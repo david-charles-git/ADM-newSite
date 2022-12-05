@@ -27,7 +27,7 @@ const useContentful = () => {
             };
             const entries = await client.getEntries(entriesObject);
             const sanitizedEntries = entries.items.map((item) => {
-                const headshot = item.fields.headshot.fields;
+                const headshot = item.fields.headshot ? item.fields.headshot.fields : { fields : { url : "" } };
                 const staffMember = {
                     ...item.fields,
                     headshot
@@ -52,8 +52,8 @@ const useContentful = () => {
             };
             const entries = await client.getEntries(entriesObject);
             const sanitizedEntries = entries.items.map((item) => {
-                const coverImage = item.fields.coverImage.fields;
-                const featureImage = item.fields.featureImage.fields;
+                const coverImage = item.fields.coverImage ? item.fields.coverImage.fields : { fields : { url : "" } };
+                const featureImage = item.fields.featureImage ? item.fields.featureImage.fields : { fields : { url : "" } };
                 const caseStudy = {
                     ...item.fields,
                     coverImage,
@@ -96,7 +96,31 @@ const useContentful = () => {
 
         }
     };
+    const getTestimonials = async () => {
+        try {
+            const entriesObject = {
+                content_type : "testimonials",
+                select : "fields",
+                order : "fields.title",
+                //"fields.key" : "fields.value"
+            };
+            const entries = await client.getEntries(entriesObject);
+            const sanitizedEntries = entries.items.map((item) => {
+                const testimonial = {
+                    ...item.fields
+                };
 
-    return { getStaffMembers, getCaseStudies, getBlogPosts }
+                return testimonial;
+            });
+
+            return sanitizedEntries;
+
+        } catch(error) {
+            console.log("getTestimonials error : " + error);
+
+        }
+    };
+
+    return { getStaffMembers, getCaseStudies, getBlogPosts,getTestimonials }
 }
 export default useContentful;

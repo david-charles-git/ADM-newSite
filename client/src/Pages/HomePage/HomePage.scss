@@ -232,143 +232,42 @@
 	}
 }
 
-@media only screen and (max-width: $screenBreakDesktopSmall) {
-	#HomePage {
-		>.inner {
-			.IntroSection {
-				>.inner {
-					.topSection {
-						>.inner {
-							.backgroundImage {
-								>.inner {
-									margin-right: 0;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+@media (max-width : $laptopLarge) {
+
 }
 
-@media only screen and (max-width: $screenBreakTablet) {
-	#HomePage {
-		>.inner {
-			.IntroSection {
-				>.inner {
-					padding: 0;
-
-					.topSection {
-						>.inner {
-							.backgroundImage {
-								>.inner {
-									max-width: 380px;
-
-									.ImageContainer {
-
-									}
-								}
-							}
-
-							.contentContainer {
-								>.inner {
-									max-width: 680px;
-									margin-left: 5%;
-
-									h1 {
-										font-size: 45px;
-										line-height: 55px;
-										color: $clrBlack;
-
-										>.Button {
-											P {
-												font-size: 45px;
-												line-height: 55px;
-											}
-										}
-									}
-
-									>.Button {
-										.tilt {
-											width: 105%;
-											height: 105%;
-											top: -2.5%;
-											left: -2.5%;
-										}
-
-										P {
-											font-size: 45px;
-											line-height: 55px;
-										}
-									}
-								}
-							}
-						}
-					}
-					
-					.bottomSection {
-						>.inner {
-							.backgroundImage {
-								>.inner {
-									max-width: 300px;
-									margin-left: 0;
-								}
-							}
-
-							.contentContainer {
-								>.inner {
-									grid-gap: 50px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+@media (max-width : $laptopSmall) {
+	
 }
 
-@media only screen and (max-width: $screenBreakTabletSmall) {
+@media (max-width : $tablet) {
+}
+
+@media (max-width : $mobileLarge) {
 	#HomePage {
 		>.inner {
-			.IntroSection {
+			.BlogSection {
+				> .backgroundImage {
+					display: none;
+				}
+			}
+
+			.TestimonialSection {				
 				>.inner {
-					.topSection {
-						>.inner {
-							.backgroundImage {
-								>.inner {
+					.StackCarousel {
+						>.outer {
+							grid-template-columns: 1fr;
+							grid-template-areas: 
+								"carousel"
+								"dots";
+							
+								.arrowContainer {
+									display: none;
+								}
+							>.inner {
+								.item {
 									
-									.ImageContainer {
-
-									}
 								}
-							}
-
-							.contentContainer {
-								>.inner {
-									max-width: 480px;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			.OurWorkSection {
-				>.inner {
-					.titleContainer {
-						>.inner {
-							.tilt {
-								width: 110%;
-								height: 110%;
-								top: -5%;
-								left: -5%;
-							}
-
-							h1 {
-								font-size: 40px;
-								line-height: 50px;
 							}
 						}
 					}
@@ -378,16 +277,10 @@
 	}
 }
 
-@media only screen and (max-width: $screenBreakMobile) {
-	#HomePage {
-		>.inner {
-		}
-	}
+@media (max-width : $mobileMedium) {
+	
 }
 
-@media only screen and (max-width: $screenBreakMobileSmall) {
-	#HomePage {
-		>.inner {
-		}
-	}
+@media (max-width : $mobileSmall) {
+	
 }

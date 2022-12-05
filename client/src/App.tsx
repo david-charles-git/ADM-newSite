@@ -93,7 +93,7 @@ const App : React.FC<AppInterface> = (props : AppInterface) => {
 				</Footer>
 			</Router>
 
-			<Test />
+			{/* <Test /> */}
 			
 		</div>
 	);
