@@ -6,8 +6,9 @@
 @import "../../Utilities/sassVariables"; 
 
 .Header {
+    width: 90%;
     max-width: 1440px;
-    padding: 30px 5%;
+    padding: 30px 0;
     z-index: 3;
 
     >.inner {

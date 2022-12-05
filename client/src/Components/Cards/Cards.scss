@@ -437,19 +437,29 @@
             }
 
             .contentContainer {
+                padding: 30px;
+                padding-bottom: 50px;
+
                 >.inner {
                     h3 {
                         text-align: center;
+                        font-size: 25px;
+                        line-height: 35px;
                     }
 
                     p {
                         text-align: center;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 6;
+                        -webkit-box-orient: vertical;  
+                        overflow: hidden;
                     }
                 }
             }
 
             .cardAuthorContainer {
                 >.inner {
+                    width: 80%;
                     max-width: 300px;
                     transform: translateY(75%);
                 }

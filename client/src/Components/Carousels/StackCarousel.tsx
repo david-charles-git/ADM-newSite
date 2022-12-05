@@ -32,6 +32,7 @@ const StackCarousel : React.FC<StackCarouselInterface> = (props : StackCarouselI
     var [activeStackCount, setActiveStackCount] = useState<number>(0);
     var [leftArrowIsActive, setLeftArrowIsActive] = useState<boolean>(false);
     var [rightArrowIsActive, setRightArrowIsActive] = useState<boolean>(true);
+    var [carouselTouchStartValue, setCarouselTouchStartValue] = useState<number>(0)
 
     //Functions
     const handleIncreaseActiveStackCount : () => void = () => {
@@ -83,6 +84,24 @@ const StackCarousel : React.FC<StackCarouselInterface> = (props : StackCarouselI
 
         setActiveStackCount(newActivestackCount);
     };
+    const handleCarouselTouchStart : (event : any) => void = (event) => {
+        const touchXPosition : number = event.touches[0].clientX;
+        
+        setCarouselTouchStartValue(touchXPosition);
+    };
+    const handleCarouselTouchEnd : (event : any) => void = (event) => {
+        const touchXPosition : number = event.changedTouches[0].clientX;
+
+        if (touchXPosition >= carouselTouchStartValue) {
+            handleDecreaseActiveStackCount();
+            
+        } else if (touchXPosition < carouselTouchStartValue) {
+            handleIncreaseActiveStackCount();
+
+        } else {
+            //do nothing
+        }
+    };
 
     //Variables
     const leftArrowClass : string = leftArrowIsActive ? "arrowContainer left active" : "arrowContainer left";
@@ -93,7 +112,7 @@ const StackCarousel : React.FC<StackCarouselInterface> = (props : StackCarouselI
 
     return (
         <div className={StackCarouselClass}>
-            <div className="outer">
+            <div className="outer" onTouchStart={ handleCarouselTouchStart } onTouchEnd={ handleCarouselTouchEnd } onTouchCancel={ handleCarouselTouchEnd }>
                 {
                     carouselHasArrows && childrenCount > 1 ?
                         <div className={leftArrowClass}>

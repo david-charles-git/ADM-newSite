@@ -118,7 +118,7 @@ const SlideCarousel : React.FC<SlideCarouselInterface> = (props : SlideCarouselI
                         :
                         <></>
                 }
-
+<div className="test">
                 <div className="inner" style={{ transform : "translateX(-" + carouselInnerTranslateXValue + "px)" }}>
                     {
                         childrenCount > 0 ?
@@ -135,7 +135,7 @@ const SlideCarousel : React.FC<SlideCarouselInterface> = (props : SlideCarouselI
                             <></>
                     }
                 </div>
-
+</div>
                 {
                     carouselHasArrows && childrenCount > 1 ?
                         <div className={rightArrowClass}>

@@ -333,7 +333,7 @@
         grid-template-columns: 1fr;
         grid-gap: 50px;
         align-content: center;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
 
         >.outer {
@@ -362,6 +362,7 @@
             max-width: 1440px;
             width: 90%;
             text-align: right;
+            margin-bottom: 20px;
 
             >.outer {
                 display: inline-block;
@@ -506,7 +507,7 @@
                 max-width: 1740px;
                 width: 95%;
                 display: grid;
-                grid-template-columns: 50px calc(100% - 300px) 50px;
+                grid-template-columns: 50px 1fr 50px;
                 grid-template-areas:
                     "arrowLeft carousel arrowRight"
                     "dots dots dots";

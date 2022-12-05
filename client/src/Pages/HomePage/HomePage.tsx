@@ -66,7 +66,7 @@ const HomePage : React.FC<HomePageInterface> = (props : HomePageInterface) => {
     return (
         <div id="HomePage">
             <div className="inner">
-                {/* <IntroSection data={{}}>
+                <IntroSection data={{}}>
                     <div className="topSection">
                         <div className="inner">
                             {
@@ -142,7 +142,7 @@ const HomePage : React.FC<HomePageInterface> = (props : HomePageInterface) => {
 
                 <OurWorkSection data={ourWorkSectionData} />
 
-                <AboutSection data={aboutSectionData} /> */}
+                {/* <AboutSection data={aboutSectionData} /> */}
                 
                 <TestimonialSection data={testimonialSectionData} />
 
