@@ -1,0 +1,261 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "../../Utilities/sassVariables";
+
+.Footer {
+    background-color: $clrBlack;
+    padding: 0 5%;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -20px;
+        right: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0px 0px 20px 98vw;
+        border-color: transparent transparent $clrBlack transparent;
+    }
+
+    >.inner {
+        max-width: 1920px;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 0px;
+
+        .upper {
+            padding: 100px 0;
+            border-bottom: 1px solid $clrWhite;
+
+            >.inner {
+                position: unset;
+
+                nav {
+                    >.inner {
+                        display: grid;
+                        align-content: center;
+                        justify-content: center;
+                        align-items: center;
+                        grid-gap: 100px;
+                        max-width: 600px;
+
+                        .Button {
+                            >.outer {
+                                >.inner {
+                                    a {
+                                        padding: 10px;
+                                        color: $clrWhite;
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                .tilt {
+                                    transition: opacity 200ms ease;
+                                    opacity: 0.1;
+                                }
+
+                                &:hover {
+                                    .tilt {
+                                        opacity: 0.5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lower {
+            padding: 30px 0;
+
+            >.inner {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 50px;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+
+                .left {
+                    >.inner {
+                        display: grid;
+                        grid-template-columns: repeat(2, auto);
+                        align-content: center;
+                        justify-content: start;
+                        align-items: center;
+                        grid-gap: 30px;
+
+                        .ImageContainer {
+                            >.inner {
+                                height: 50px;
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    >.inner {
+                        nav {
+                            >.inner {
+                                display: grid;
+                                grid-template-columns: repeat(3, auto);
+                                align-content: center;
+                                justify-content: end;
+                                align-items: center;
+                                grid-gap: 50px;
+
+                                .Button {
+                                    >.outer {
+                                        >.inner {
+                                            a {
+                                                color: $clrWhite;
+                                                font-size: 16px;
+                                                line-height: 30px;
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .toTopContainer {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            bottom: 30px;
+            right: 0;
+            cursor: pointer;
+
+            .tiltContainer {
+                opacity: 0.3;
+            }
+
+            >.inner {
+                height: 50px;
+                display: grid;
+                grid-template-columns: 1fr;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+
+                .toTop {
+                    width: 20px;
+                    height: 0px;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 10px solid $clrBlack;
+                    border-radius: 3px;
+                }
+            }
+
+            &:hover {
+                .tiltContainer {
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : $laptopLarge) {
+
+}
+
+@media (max-width : $laptopSmall) {
+
+}
+
+@media (max-width : $tablet) {
+	.Footer {
+        >.inner {
+            .upper {
+                padding: 50px 0 20px 0;
+
+                >.inner {
+                    nav {
+                        >.inner {
+                            display: block;
+                            text-align: center;
+
+                            .Button {
+                                >.outer {
+                                    width: auto;
+                                    display: inline-block;
+                                    margin: 0 30px 30px 30px;
+                                }
+                            }
+                        }
+                    }
+
+                    .toTopContainer {
+                        display: none;
+                    }
+                }
+            }
+
+            .lower {
+                >.inner {
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-areas:
+                        "top"
+                        "bottom";
+                    grid-gap: 30px;
+
+                    .left {
+                        grid-area: bottom;
+
+                        >.inner {
+                            justify-content: center;
+                        }
+                    }
+
+                    .right {
+                        grid-area: top;
+
+                        >.inner {
+                            nav {
+                                >.inner {
+                                    display: block;
+                                    text-align: center;
+
+                                    .Button {
+                                        .outer{
+                                            display: inline-block;
+                                            width: auto;
+                                            margin: 0 10px 10px 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : $mobileLarge) {
+    
+}
+
+@media (max-width : $mobileMedium) {
+	
+}
+
+@media (max-width : $mobileSmall) {
+	
+}

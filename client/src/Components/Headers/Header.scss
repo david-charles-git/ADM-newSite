@@ -1,0 +1,213 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "../../Utilities/sassVariables"; 
+
+.Header {
+    max-width: 1440px;
+    padding: 30px 5%;
+    z-index: 3;
+
+    >.inner {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-areas: 'logo navigation';
+        grid-gap: 50px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        position: unset;
+
+        .logo {
+            grid-area: logo;
+            z-index: 4;
+
+            .ImageContainer {
+                justify-content: start;
+            }
+        }
+
+        nav {
+            grid-area: navigation;
+
+            >.inner {
+                display: grid;
+                grid-gap: 80px;
+                align-content: center;
+                justify-content: end;
+                align-items: center;
+
+                .Button {
+                    >.outer {
+                        >.inner {
+                            a {
+                                padding: 10px;
+                                transition: color 100ms ease;
+                            }
+                        }
+
+                        .tilt {
+                            opacity: 0;
+                            transition: opacity 200ms ease;
+                        }
+
+                        &:hover {
+                            >.inner {
+                                a {
+                                    color: $clrMustard;
+                                }
+                            }
+
+                            .tilt {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .burgerMenuContainer {
+            display: none;
+        }
+    }
+}
+
+@media (max-width : $laptopLarge) {
+    //null
+}
+
+@media (max-width : $laptopSmall) {
+    //null
+}
+
+@media (max-width : $tablet) {
+	.Header {    
+        >.inner {
+            grid-template-columns: 200px 1fr;
+            grid-gap: 30px;
+    
+            nav {    
+                >.inner {
+                    grid-gap: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : $mobileLarge) {
+	.Header {
+        >.inner {
+            grid-template-columns: 1fr;
+            grid-template-areas: 'logo';
+            max-width: 300px;
+
+            .logo {
+                .ImageContainer {
+                    justify-content: center;
+
+                    img {
+                        max-height: 40px;
+                    }
+                }
+            }
+
+            .navigation {
+                display: grid;
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                width: 0vw;
+                overflow: hidden;
+                overflow-y: scroll;
+                align-content: space-between;
+                justify-content: end;
+                align-items: center;
+                padding: 150px 0 30px 0;
+                background-color: $clrMustard;
+                transition: width 200ms ease;
+
+                &.active {
+                    width: 100vw;
+
+                    >.inner {
+                        .Button {
+                            >.outer {
+                                opacity: 1;
+                                transition: opacity 100ms ease;
+                            }
+                        }
+                    }
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                >.inner {
+                    grid-template-columns: 1fr !important;
+                    text-align: right;
+                    min-width: 300px;
+                    padding: 0 5vw;
+
+                    .Button {
+                        display: inline-block;
+                        width: auto;
+
+                        >.outer{
+                            opacity: 0;
+                            transition: opacity 300ms ease;
+                        }
+                    }
+                }
+            }
+
+            .burgerMenuContainer {
+                display: block;
+                grid-area: burgerMenu;
+                position: absolute;
+                top: 0;
+                right: 5%;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                z-index: 4;
+
+                .tiltContainer {
+                    .tilt {
+                        height: 105%;
+                        top: -5%;
+                    }
+                }
+
+                >.inner {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+
+                    .burgerMenu {
+                        width: 20px;
+                        height: 50px;
+                        background-position: center center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : $mobileMedium) {
+	//null
+}
+
+@media (max-width : $mobileSmall) {
+	//null
+}

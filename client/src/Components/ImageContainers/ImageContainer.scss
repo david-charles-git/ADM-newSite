@@ -1,0 +1,28 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "../../Utilities/sassVariables";
+
+@media only screen and (max-width: 120000px) {
+    .ImageContainer {
+        max-height: 100%;
+        overflow: hidden;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        
+        >.inner {
+            a {
+                height: 100%;
+            }
+
+            img {
+                max-height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}

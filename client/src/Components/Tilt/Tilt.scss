@@ -1,0 +1,45 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "../../Utilities/sassVariables";
+
+.tiltContainer {
+	container: tilt / inline-size;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+.tilt {
+	position: relative;
+	width: 110%;
+	height: 120%;
+	top: -10%;
+	left: -5%;
+
+	> .inner {
+		height: 100%;
+	}
+}
+
+@container tilt (inline-size <= 200px) {
+	.tilt {
+		width: 110%;
+		height: 110%;
+		top: -5%;
+		left: -5%;
+	}
+}
+
+@container tilt (inline-size <= 50px) {
+	> .tilt {
+		height: 100%;
+		width: 100%;
+		top: -0%;
+		left: -0%; 
+	}
+}

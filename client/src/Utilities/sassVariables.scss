@@ -1,0 +1,45 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+//screen breaks
+$laptopLarge : 2560px;
+$laptopSmall : 1440px;
+$tablet : 1024px;
+$mobileLarge : 768px;
+$mobileMedium : 425px;
+$mobileSmall : 375px;
+
+$screenBreakMax : 12000000px;
+$screenBreakDesktopSmall : 1280px;
+$screenBreakTablet : 1080px;
+$screenBreakTabletSmall : 880px;
+$screenBreakMobile : 480px;
+$screenBreakMobileSmall : 380px;
+
+//max widths
+
+//page padding
+$paddingDefault : 0px 5%;
+
+//colours
+$clrBlack : #000000;
+$clrWhite : #ffffff;
+$clrMustard : #FAD762;
+
+//fonts
+$fntDefault : "Poppins",
+Arial,
+Helvetica,
+sans-serif;
+$fntDisplay : "EB Garamond",
+Arial,
+Helvetica,
+sans-serif;
+
+//font sizes
+//font sze regular
+$fntSizeRegular : 18px;
+$lineHeightRegular : 46px;
+$letterSpacingRegular : 0.5px;

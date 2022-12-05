@@ -1,0 +1,393 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "../../Utilities/sassVariables";
+
+#HomePage {
+	>.inner {
+		.BlogSection {
+			padding: 50px 0;
+
+			.backgroundImage {
+				position: absolute;
+				height: 100%;
+				top: 0;
+				right:0;
+
+				>.inner {
+					max-width: 1920px;
+
+					.ImageContainer {
+						justify-content: end;
+					}
+				}
+			}
+
+			>.inner {
+				max-width: 1440px;
+				width: 90%;
+				
+				.sectionTitle {
+					>.inner {
+						h2 {
+
+						}
+					}
+				}
+
+				.Grid {
+					
+				}
+			}
+		}
+
+		.TestimonialSection {
+			padding:100px 0;
+			
+			>.inner  {
+				.StackCarousel {
+					>.outer {
+						>.inner {
+							.item {
+
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.AboutSection {
+			>.inner {
+				
+			}
+		}
+
+		.OurWorkSection {
+			>.inner {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-gap: 100px;
+				grid-gap: 100px;
+				padding: 100px 0;
+				overflow: hidden;
+				
+				.titleContainer {
+					max-width: 1440px;
+					width: 90%;
+					
+					>.inner {
+						display: inline-block;
+						width: auto;
+
+						h1 {
+							font-size: 90px;
+							line-height: 100px;
+							letter-spacing: 1px;
+							font-family: $fntDisplay;
+							color: $clrMustard;
+						}
+					}
+				}
+
+				.SlideCarousel {
+					overflow: hidden;
+				}
+			}
+		}
+
+		.IntroSection {
+			> .inner {
+				padding: 100px 0;
+
+				.topSection {
+					>.inner {
+						padding: 50px 0;
+
+						.backgroundImage {
+							position: absolute;
+							top: 0;
+							left: 0;
+							height: 100%;
+							max-height: 1000px;
+
+							>.inner {
+								max-width: 1440px;
+								width: 90%;
+								height: 100%;
+
+								.ImageContainer {
+									justify-content: end;
+									max-width: 800px;
+									margin-right: 0;
+									height: 100%;
+								}
+							}
+						}
+
+						.contentContainer {
+							>.inner {
+								max-width: 1440px;
+								width: 90%;
+								display: grid;
+								grid-gap: 100px;
+								grid-template-columns: 1fr;
+								align-content: center;
+								justify-content: start;
+								align-items: center;
+
+								h1 {
+									display: inline-block;
+									max-width: 980px;
+									margin-left: 0;
+
+									>.Button {
+										display: inline-block;
+										width: auto;
+										padding: 0 10px;
+
+										P {
+											font-size: 90px;
+											line-height: 100px;
+											letter-spacing: 1px;
+											font-weight: 600;
+											color: $clrMustard;
+											font-family: $fntDisplay;
+										}
+									}
+								}
+
+								>.Button {
+									display: inline-block;
+									width: auto;
+									margin-left: 0;
+
+									P {
+										font-size: 90px;
+										line-height: 100px;
+										letter-spacing: 1px;
+										font-family: $fntDisplay;
+										color: $clrMustard;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.bottomSection {
+					padding-bottom: 200px;
+					
+					>.inner {
+						.contentContainer {
+							>.inner {
+								max-width: 1440px;
+								width: 90%;
+								display: grid;
+								grid-gap: 100px;
+								grid-template-columns: 1fr;
+								align-content: center;
+								justify-content: end;
+								align-items: center;
+
+								P {
+									text-align: right;
+								}
+
+								.Button {
+									display: inline-block;
+									width: auto;
+									margin-right: 0;
+
+									a {
+										color: $clrMustard;
+										font-weight: 600;
+									}
+								}
+							}
+						}
+
+						.backgroundImage {
+							position: absolute;
+							top: 0;
+							left: 0;
+							height: 100%;
+							max-height: 1000px;
+
+							>.inner {
+								max-width: 1920px;
+								width: 100%;
+
+								.ImageContainer {
+									justify-content: start;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $screenBreakDesktopSmall) {
+	#HomePage {
+		>.inner {
+			.IntroSection {
+				>.inner {
+					.topSection {
+						>.inner {
+							.backgroundImage {
+								>.inner {
+									margin-right: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $screenBreakTablet) {
+	#HomePage {
+		>.inner {
+			.IntroSection {
+				>.inner {
+					padding: 0;
+
+					.topSection {
+						>.inner {
+							.backgroundImage {
+								>.inner {
+									max-width: 380px;
+
+									.ImageContainer {
+
+									}
+								}
+							}
+
+							.contentContainer {
+								>.inner {
+									max-width: 680px;
+									margin-left: 5%;
+
+									h1 {
+										font-size: 45px;
+										line-height: 55px;
+										color: $clrBlack;
+
+										>.Button {
+											P {
+												font-size: 45px;
+												line-height: 55px;
+											}
+										}
+									}
+
+									>.Button {
+										.tilt {
+											width: 105%;
+											height: 105%;
+											top: -2.5%;
+											left: -2.5%;
+										}
+
+										P {
+											font-size: 45px;
+											line-height: 55px;
+										}
+									}
+								}
+							}
+						}
+					}
+					
+					.bottomSection {
+						>.inner {
+							.backgroundImage {
+								>.inner {
+									max-width: 300px;
+									margin-left: 0;
+								}
+							}
+
+							.contentContainer {
+								>.inner {
+									grid-gap: 50px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $screenBreakTabletSmall) {
+	#HomePage {
+		>.inner {
+			.IntroSection {
+				>.inner {
+					.topSection {
+						>.inner {
+							.backgroundImage {
+								>.inner {
+									
+									.ImageContainer {
+
+									}
+								}
+							}
+
+							.contentContainer {
+								>.inner {
+									max-width: 480px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.OurWorkSection {
+				>.inner {
+					.titleContainer {
+						>.inner {
+							.tilt {
+								width: 110%;
+								height: 110%;
+								top: -5%;
+								left: -5%;
+							}
+
+							h1 {
+								font-size: 40px;
+								line-height: 50px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $screenBreakMobile) {
+	#HomePage {
+		>.inner {
+		}
+	}
+}
+
+@media only screen and (max-width: $screenBreakMobileSmall) {
+	#HomePage {
+		>.inner {
+		}
+	}
+}

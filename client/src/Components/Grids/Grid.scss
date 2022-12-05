@@ -1,0 +1,133 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "../../Utilities/sassVariables";
+
+@media only screen and (max-width: $screenBreakMax) {
+    .Grid {
+        >.outer {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 50px;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+
+            >.inner {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-gap: 30px;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                text-align:center;
+
+                >.item {
+                    display: none;
+                    height: 100%;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+
+
+            >.paginationContainer {
+                padding: 0 5%;
+
+                >.inner {
+                    max-width: 1440px;
+                    text-align: center;
+
+                    >.Button {
+                        >.outer {
+                            display: inline-block;
+                            width: auto;
+
+                            >.inner {
+                                display: inline-block;
+                                width: auto;
+
+                                p {
+                                    font-weight: 600;
+                                }
+
+                                a {
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.link {
+                    >.inner {    
+                        >.Button {
+                            >.outer {
+                                >.inner {                                
+                                    a {
+                                        display: inline-block;
+                                        width: auto;
+                                        padding: 0 40px;
+                                        color: $clrMustard;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.loadMore {
+                    >.inner {    
+                        >.Button {
+                            >.outer {
+                                >.inner {                                
+                                    p {
+                                        display: inline-block;
+                                        width: auto;
+                                        padding: 0 40px;
+                                        color: $clrMustard;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.paged {
+                    >.inner {    
+                        >.Button {
+                            >.outer {
+                                >.inner {
+                                    p {
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.grid-3-3-1 {
+            >.outer {
+                >.inner {
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-gap: 120px;
+                }
+            }
+        }
+
+        &.SingleColumnGrid {
+            >.outer {
+                >.inner {
+                    grid-gap: 0;
+                }
+            }
+        }
+    }
+}

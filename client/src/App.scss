@@ -1,0 +1,76 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "./Utilities/sassVariables";
+
+@media only screen and (max-width: $screenBreakMax) {
+	.App {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 50px;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+#staffMemberSection {
+	> .inner {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 50px;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		width: 90%;
+		max-width: 1440px;
+		
+		.StaffCard {
+			height:100%;
+
+			> .inner {
+				height: 100%;
+
+				.staffImage {
+					height: 100%;
+					overflow: hidden;
+				}
+
+				.staffInfo {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					transform: translateY(50%);
+
+					>.inner {
+						display: grid;
+						grid-template-columns: 1fr;
+						grid-gap:10px;
+						align-content: center;
+						justify-content: start;
+						align-items: center;
+
+						p {
+							color: #fff;
+						}
+
+						.Button {
+							display: inline-block;
+							width: auto;
+							margin-left: 0;
+
+							p {
+								color: $clrBlack;
+								font-size: 15px;
+								line-height: 25px;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,605 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "../../Utilities/sassVariables";
+
+@media only screen and (max-width: $screenBreakMax) {
+    .StackCarousel { 
+        >.outer {
+            >.inner {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas: "stack";
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+
+                .item {
+                    grid-area: stack;
+                    opacity: 0;
+                    z-index: 0;
+                    transition: opacity 200ms ease;
+
+                    &.active {
+                        opacity: 1;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+
+        &.hasArrows {
+            >.outer {
+                max-width: 1440px;
+                width: 90%;
+                display: grid;
+                grid-template-columns: 1fr ;
+                grid-template-areas: "arrowLeft carousel arrowRight";
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                grid-gap: 100px;
+
+                >.inner {
+                    grid-area: carousel;
+                }
+
+                .arrowContainer {
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0.3;
+                    transition: opacity 200ms ease;
+
+                    &.left {
+                        grid-area: arrowLeft;
+
+                        >.inner {
+                            .arrow {
+                                >.inner {
+                                    border-bottom: 10px solid transparent;
+                                    border-top: 10px solid transparent;
+                                    border-right: 10px solid $clrMustard;
+                                }
+                            }
+                        }
+                    }
+
+                    &.right {
+                        grid-area: arrowRight;
+
+                        >.inner {
+                            .arrow {
+                                >.inner {
+                                    border-bottom: 10px solid transparent;
+                                    border-top: 10px solid transparent;
+                                    border-left: 10px solid $clrMustard;
+                                }
+                            }
+                        }
+                    }
+
+                    &.active {
+                        opacity: 1;
+                    }
+
+                    >.inner {
+                        height: 50px;
+
+                        .arrow {
+                            height: 100%;
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            align-content: center;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+
+                            >.inner {
+                                width: 0px;
+                                height: 20px;
+                                border-radius: 3px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hasDots {
+            >.outer {
+                max-width: 1180px;
+                width: 90%;
+                display: grid;
+                grid-template-columns: 1fr ;
+                grid-template-areas: "carousel" "dots";
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                grid-gap: 100px;
+
+                >.inner {
+                    grid-area: carousel;
+                }
+
+                .dotContainer {
+                    grid-area: dots;
+
+                    >.inner {
+                        display: grid;
+                        grid-gap: 20px;
+                        align-content: center;
+                        justify-content: center;
+                        align-items: center;
+
+                        .dot {
+                            width: 20px;
+                            height: 20px;
+                            opacity: 0.3;
+                            transition: opacity 200ms ease;
+                            cursor: pointer;
+
+                            &.active {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hasArrows.hasDots {
+            >.outer {
+                max-width: 1440px;
+                width: 90%;
+                display: grid;
+                grid-template-columns: 50px 1fr 50px;
+                grid-template-areas: "arrowLeft carousel arrowRight" "dots dots dots";
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                grid-gap: 100px;
+
+                >.inner {
+                    grid-area: carousel;
+                }
+
+                .arrowContainer {
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.left {
+                        grid-area: arrowLeft;
+
+                        >.inner {
+                            .arrow {
+                                >.inner {
+                                    border-bottom: 10px solid transparent;
+                                    border-top: 10px solid transparent;
+                                    border-right: 10px solid $clrMustard;
+                                }
+                            }
+                        }
+                    }
+
+                    &.right {
+                        grid-area: arrowRight;
+
+                        >.inner {
+                            .arrow {
+                                >.inner {
+                                    border-bottom: 10px solid transparent;
+                                    border-top: 10px solid transparent;
+                                    border-left: 10px solid $clrMustard;
+                                }
+                            }
+                        }
+                    }
+
+                    >.inner {
+                        height: 50px;
+
+                        .arrow {
+                            height: 100%;
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            align-content: center;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+
+                            >.inner {
+                                width: 0px;
+                                height: 20px;
+                                border-radius: 3px;
+                            }
+                        }
+                    }
+                }
+
+                .dotContianer {
+                    grid-area: dots;
+                }
+            }
+        }
+    }
+
+    .TabbedCarousel {
+        overflow: hidden;
+
+        >.outer {
+            >.inner {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas: "stack";
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+
+                .item {
+                    grid-area: stack;
+                    opacity: 0;
+                    z-index: 0;
+                    transition: opacity 200ms ease;
+
+                    &.active {
+                        opacity: 1;
+                        z-index:2;
+
+                    }
+                }
+            }
+
+            .tabContainer {
+                position: absolute;
+                height: 100%;
+                width: auto;
+                display: inline-block;
+                top: 0;
+                right: 5%;
+
+                >.inner {
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-gap: 20px;
+                    height: 100%;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+
+                    .tab {
+                        >.inner {
+                            cursor: pointer;
+
+                            .dot {
+                                display: inline-block;
+                                vertical-align: middle;
+                                margin-right: 10px;
+                                width: auto;
+                                opacity: 0.3;
+                                transition: opacity 200ms ease;
+
+                                >.inner {
+                                    width: 20px;
+                                    height: 20px;
+
+                                    .tilt {
+                                        height: 100%;
+                                        width: 100%;
+                                        top: 0;
+                                        left: 0;
+                                    }
+                                }
+                            }
+                            
+                            p {
+                                display: inline-block;
+                                vertical-align: middle;
+                                width: auto;
+                                color: $clrWhite;
+                                opacity: 0;
+                                transition: opacity 200ms ease;
+                            }
+                        }
+
+                        &.active {
+                            >.inner {
+                                .dot {
+                                    opacity: 1;
+                                }
+
+                                p {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .SlideCarousel {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
+        >.outer {
+            max-width: 1440px;
+            width: 90%;
+
+            >.inner {
+                display: grid;
+                grid-template-columns: repeat(3, 800px);
+                grid-gap: 100px;
+                width: auto;
+                max-height: 700px;
+                align-content: center;
+                justify-content: start;
+                align-items: center;
+                transition: transform 200ms ease;
+
+                .item {
+                    height: 550px;
+
+                }
+            }
+        }
+
+        .Button {
+            max-width: 1440px;
+            width: 90%;
+            text-align: right;
+
+            >.outer {
+                display: inline-block;
+                width: auto;
+
+                >.inner {
+                    a {
+                        color: $clrWhite;
+                        font-weight: 600;
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+
+        &.hasArrows {
+            >.outer {
+                max-width: 1440px;
+                width: 90%;
+                display: grid;
+                grid-template-columns: 1fr ;
+                grid-template-areas: "arrowLeft carousel arrowRight";
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                grid-gap: 100px;
+
+                >.inner {
+                    grid-area: carousel;
+                }
+
+                .arrowContainer {
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0.3;
+                    transition: opacity 200ms ease;
+                    z-index:3;
+
+                    &.left {
+                        grid-area: arrowLeft;
+
+                        >.inner {
+                            .arrow {
+                                >.inner {
+                                    border-bottom: 10px solid transparent;
+                                    border-top: 10px solid transparent;
+                                    border-right: 10px solid $clrMustard;
+                                }
+                            }
+                        }
+                    }
+
+                    &.right {
+                        grid-area: arrowRight;
+
+                        >.inner {
+                            .arrow {
+                                >.inner {
+                                    border-bottom: 10px solid transparent;
+                                    border-top: 10px solid transparent;
+                                    border-left: 10px solid $clrMustard;
+                                }
+                            }
+                        }
+                    }
+
+                    &.active {
+                        opacity: 1;
+                    }
+
+                    >.inner {
+                        height: 50px;
+
+                        .arrow {
+                            height: 100%;
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            align-content: center;
+                            justify-content: start;
+                            align-items: center;
+                            cursor: pointer;
+
+                            >.inner {
+                                width: 0px;
+                                height: 20px;
+                                border-radius: 3px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hasDots {
+            >.outer {
+                max-width: 1180px;
+                width: 90%;
+                display: grid;
+                grid-template-columns: 1fr ;
+                grid-template-areas: "carousel" "dots";
+                align-content: center;
+                justify-content: start;
+                align-items: center;
+                grid-gap: 100px;
+
+                >.inner {
+                    grid-area: carousel;
+                }
+
+                .dotContainer {
+                    grid-area: dots;
+
+                    >.inner {
+                        display: grid;
+                        grid-gap: 20px;
+                        align-content: center;
+                        justify-content: center;
+                        align-items: center;
+
+                        .dot {
+                            width: 20px;
+                            height: 20px;
+                            opacity: 0.3;
+                            transition: opacity 200ms ease;
+                            cursor: pointer;
+
+                            &.active {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hasArrows.hasDots {
+            >.outer {
+                max-width: 1740px;
+                width: 95%;
+                display: grid;
+                grid-template-columns: 50px calc(100% - 300px) 50px;
+                grid-template-areas:
+                    "arrowLeft carousel arrowRight"
+                    "dots dots dots";
+                align-content: center;
+                justify-content: start;
+                align-items: center;
+                grid-gap: 100px;
+
+                >.inner {
+                    grid-area: carousel;
+                }
+
+                .arrowContainer {
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.left {
+                        grid-area: arrowLeft;
+
+                        >.inner {
+                            .arrow {
+                                >.inner {
+                                    border-bottom: 10px solid transparent;
+                                    border-top: 10px solid transparent;
+                                    border-right: 10px solid $clrMustard;
+                                }
+                            }
+                        }
+                    }
+
+                    &.right {
+                        grid-area: arrowRight;
+
+                        >.inner {
+                            .arrow {
+                                >.inner {
+                                    border-bottom: 10px solid transparent;
+                                    border-top: 10px solid transparent;
+                                    border-left: 10px solid $clrMustard;
+                                }
+                            }
+                        }
+                    }
+
+                    >.inner {
+                        height: 50px;
+
+                        .arrow {
+                            height: 100%;
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            align-content: center;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+
+                            >.inner {
+                                width: 0px;
+                                height: 20px;
+                                border-radius: 3px;
+                            }
+                        }
+                    }
+                }
+
+                .dotContianer {
+                    grid-area: dots;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $screenBreakTabletSmall) {
+    .StackCarousel {
+        >.outer {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "carousel"
+                "dots";
+            grid-gap: 0 50px;
+
+            .arrowContainer {
+                display: none;
+            }
+
+            >.inner {
+
+            }
+        }
+    }
+}

@@ -1,0 +1,165 @@
+/*
+	Project : AddMustard
+	Author(s) : David Charles
+*/
+
+@import "../../Utilities/sassVariables";
+
+@media only screen and (max-width: 120000px) {
+	.WhatWeDoPage {
+		>.inner {
+			.IntroSection {
+				padding: 100px 0;
+
+				>.inner {
+					max-width: 1440px;
+					width: 90%;
+					display: grid;
+					grid-template-columns: 1fr;
+					grid-gap: 50px;
+					align-content: center;
+					justify-content: center;
+					align-items: center;
+
+					.topContainer {
+						>.inner {
+							display: grid;
+							grid-template-columns: 1fr;
+							align-content: center;
+							justify-content: center;
+							align-items: center;
+							min-height: 800px;
+
+							.backgroundImage {
+								position: absolute;
+								height:100%;
+								top: 0;
+								left: 0;
+
+								>.inner {
+									.ImageContainer {
+
+									}
+								}
+							}
+
+							.titleContainer {
+								display: inline-block;
+								width: auto;
+
+								>.inner {
+									.tilt {
+										width: 110%;
+										height: 110%;
+										top: -5%;
+										left: -5%;
+									}
+
+									h1 {
+										font-size: 90px;
+										line-height: 100px;
+										letter-spacing: 1px;
+										color: $clrMustard;
+										font-weight: 600;
+										font-family: $fntDisplay;
+										padding: 0 10px;
+									}
+								}
+							}
+						}
+					}
+
+					.bottomContainer {
+						>.inner {
+							p {
+								font-size: 40px;
+								line-height: 60px;
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+
+			.AboutSection {
+				>.inner {
+					.Grid {
+						>.outer {
+							>.inner {
+								.item {
+									.AboutCard {
+										padding: 100px 0px;
+										min-height: unset;
+									}
+
+									&:nth-child(even) {
+										.AboutCard {
+											>.inner {
+												grid-template-columns: 1fr 500px;
+												grid-template-areas: "content image";
+	
+												.imageParent {
+													grid-area: image;
+												}
+	
+												.contentContainer {	
+													grid-area: content;
+	
+													.title {
+														left: unset;
+														right: 0;
+													}
+												}
+											}
+										}
+									}
+
+									&:nth-child(1) {
+										.AboutCard {
+											padding-top: 200px;
+										}
+									}
+
+									&:nth-last-child(1) {
+										.AboutCard {
+											padding-bottom: 200px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.OurWorkSection {
+				>.inner {
+					display: grid;
+					grid-template-columns: 1fr;
+					grid-gap: 100px;
+					grid-gap: 100px;
+					padding: 100px 0;
+					overflow: hidden;
+					
+					.titleContainer {
+						max-width: 1440px;
+    					width: 90%;
+						
+						>.inner {
+							display: inline-block;
+    						width: auto;
+
+							h1 {
+								font-size: 90px;
+								line-height: 100px;
+								letter-spacing: 1px;
+								font-family: $fntDisplay;
+								color: $clrMustard;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

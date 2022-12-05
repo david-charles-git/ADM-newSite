@@ -1,0 +1,960 @@
+ @media only screen and (max-width: 12000000px) {
+	 * {
+		 margin: 0 auto;
+		 padding: 0;
+		 width: 100%;
+		 display: block;
+		 position: relative;
+		 box-sizing: border-box;
+		 font-size: 0;
+		 font-family: "Poppins", Arial, Helvetica, sans-serif;
+		 font-weight: 400;
+		 color: #000;
+		 z-index: 2;
+	}
+	 body {
+		 background-color: #fad762;
+		 min-height: 100vh;
+	}
+	 body h3 {
+		 font-family: "EB Garamond", Arial, Helvetica, sans-serif;
+		 font-size: 35px;
+		 line-height: 45px;
+		 letter-spacing: 1px;
+	}
+	 body p {
+		 font-size: 18px;
+		 line-height: 46px;
+		 letter-spacing: 0.5px;
+	}
+	 body p span {
+		 font-size: inherit;
+		 line-height: inherit;
+		 letter-spacing: inherit;
+		 font-family: inherit;
+		 font-weight: inherit;
+		 color: inherit;
+		 cursor: inherit;
+		 display: inline;
+		 width: auto;
+	}
+	 body a {
+		 font-size: 18px;
+		 line-height: 46px;
+		 letter-spacing: 0.5px;
+		 text-decoration: none;
+	}
+	 body a span {
+		 font-size: inherit;
+		 line-height: inherit;
+		 letter-spacing: inherit;
+		 font-family: inherit;
+		 font-weight: inherit;
+		 color: inherit;
+		 cursor: inherit;
+		 display: inline;
+		 width: auto;
+	}
+	 .App {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-gap: 50px;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .App #HomePage > .inner .BlogSection {
+		 padding: 50px 0;
+	}
+	 .App #HomePage > .inner .BlogSection .backgroundImage {
+		 position: absolute;
+		 height: 100%;
+		 top: 0;
+		 right: 0;
+	}
+	 .App #HomePage > .inner .BlogSection .backgroundImage > .inner {
+		 max-width: 1920px;
+	}
+	 .App #HomePage > .inner .BlogSection .backgroundImage > .inner .ImageContainer {
+		 justify-content: end;
+	}
+	 .App #HomePage > .inner .BlogSection > .inner {
+		 max-width: 1440px;
+		 width: 90%;
+	}
+	 .App #HomePage > .inner .TestimonialSection {
+		 padding: 100px 0;
+	}
+	 .Button p {
+		 cursor: pointer;
+	}
+	 .Button a {
+		 cursor: pointer;
+	}
+	 .Button a.hasIcon {
+		 display: grid;
+		 grid-template-columns: 30px auto;
+		 grid-gap: 10px;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .ToTopButton {
+		 position: fixed;
+		 width: 50px;
+		 height: 50px;
+		 bottom: 30px;
+		 right: 0;
+		 cursor: pointer;
+		 transition: bottom 100ms ease;
+	}
+	 .ToTopButton .tilt {
+		 width: 100%;
+		 height: 100%;
+		 top: 0;
+		 left: 0;
+		 opacity: 0.5;
+		 transition: opacity 200ms ease;
+	}
+	 .ToTopButton > .inner {
+		 height: 50px;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .ToTopButton > .inner .toTop {
+		 width: 20px;
+		 height: 0px;
+		 border-left: 10px solid transparent;
+		 border-right: 10px solid transparent;
+		 border-bottom: 10px solid #000;
+		 border-radius: 3px;
+	}
+	 .ToTopButton:hover .tilt {
+		 opacity: 0.75;
+	}
+	 .BlogCard {
+		 height: 100%;
+	}
+	 .BlogCard > .inner {
+		 height: 100%;
+	}
+	 .BlogCard > .inner .contentContainer {
+		 padding: 30px;
+		 height: 100%;
+	}
+	 .BlogCard > .inner .contentContainer > .tilt {
+		 width: 110%;
+		 height: 105%;
+		 top: -5%;
+		 left: -5%;
+	}
+	 .BlogCard > .inner .contentContainer > .inner {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-gap: 30px;
+	}
+	 .BlogCard > .inner .contentContainer > .inner h3 {
+		 font-family: "EB Garamond", Arial, Helvetica, sans-serif;
+		 font-size: 35px;
+		 line-height: 45px;
+		 letter-spacing: 1px;
+		 color: #fff;
+		 text-align: left;
+		 display: -webkit-box;
+		 -webkit-line-clamp: 5;
+		 -webkit-box-orient: vertical;
+		 overflow: hidden;
+	}
+	 .BlogCard > .inner .contentContainer > .inner p {
+		 color: #fff;
+		 text-align: left;
+	}
+	 .BlogCard > .inner .contentContainer > .inner .tagContainer > .inner {
+		 text-align: left;
+	}
+	 .BlogCard > .inner .contentContainer > .inner .tagContainer > .inner .tag {
+		 display: inline-block;
+		 width: auto;
+		 vertical-align: middle;
+		 margin-right: 20px;
+	}
+	 .BlogCard > .inner .contentContainer > .inner .tagContainer > .inner .tag > .inner {
+		 display: inline-block;
+		 width: auto;
+	}
+	 .BlogCard > .inner .contentContainer > .inner .tagContainer > .inner .tag > .inner .Button > .outer .tilt {
+		 height: 100%;
+		 width: 100%;
+		 top: 0;
+		 left: 0;
+	}
+	 .BlogCard > .inner .contentContainer > .inner .tagContainer > .inner .tag > .inner .Button > .outer > .inner a {
+		 font-size: 14px;
+		 line-height: 30px;
+		 font-weight: 600;
+		 padding: 0 10px;
+	}
+	 .BlogCard > .inner .contentContainer > .inner .tagContainer > .inner .tag > .inner .Button > .outer > .inner a span {
+		 text-transform: capitalize;
+	}
+	 .BlogCard > .inner > .Button {
+		 position: absolute;
+		 left: 0;
+		 bottom: 0;
+	}
+	 .BlogCard > .inner > .Button > .outer {
+		 display: inline-flex;
+		 width: auto;
+		 transform: translateY(100%);
+	}
+	 .BlogCard > .inner > .Button > .outer > .inner {
+		 display: inline-block;
+		 width: auto;
+	}
+	 .BlogCard > .inner > .Button > .outer > .inner p {
+		 color: #000;
+		 font-weight: 600;
+		 line-height: 30px;
+	}
+	 .BlogCard > .inner > .Button > .outer > .inner a {
+		 color: #000;
+		 font-weight: 600;
+		 line-height: 30px;
+	}
+	 .BlogCard > .inner.withImage .contentContainer {
+		 height: auto;
+	}
+	 .BlogCard > .inner.withImage .contentContainer .tilt {
+		 height: 110%;
+	}
+	 .BlogCard > .inner.withImage .contentContainer > .inner h3 {
+		 display: -webkit-box;
+		 -webkit-line-clamp: 2;
+		 -webkit-box-orient: vertical;
+		 overflow: hidden;
+	}
+	 .BlogCard > .inner.withImage .ImageContainer {
+		 z-index: 1;
+		 max-height: 200px;
+	}
+	 .TestimonialCard > .inner .tilt {
+		 width: 110%;
+		 left: -5%;
+	}
+	 .TestimonialCard > .inner .tilt > .inner {
+		 border: 1px solid #fad762;
+	}
+	 .TestimonialCard > .inner .backgroundContainer {
+		 position: absolute;
+		 height: 100%;
+		 top: 0;
+		 left: 0;
+	}
+	 .TestimonialCard > .inner .backgroundContainer > .inner {
+		 display: grid;
+		 grid-template-columns: repeat(2, 1fr);
+		 grid-template-areas: "topLeft topRight" "bottomLeft bottomRight";
+		 height: 100%;
+		 align-content: space-between;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .TestimonialCard > .inner .backgroundContainer > .inner > .ImageContainer:nth-child(1) {
+		 grid-area: topLeft;
+		 justify-content: start;
+	}
+	 .TestimonialCard > .inner .backgroundContainer > .inner > .ImageContainer:nth-child(2) {
+		 grid-area: bottomRight;
+		 justify-content: end;
+	}
+	 .TestimonialCard > .inner .contentContainer {
+		 padding: 50px;
+	}
+	 .TestimonialCard > .inner .contentContainer > .inner {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-gap: 20px;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .TestimonialCard > .inner .contentContainer > .inner h3 {
+		 font-size: 40px;
+		 line-height: 50px;
+		 letter-spacing: 1px;
+		 font-weight: 600;
+	}
+	 .TestimonialCard > .inner .contentContainer > .inner p {
+		 line-height: 28px;
+	}
+	 .TestimonialCard > .inner .cardAuthorContainer {
+		 display: grid;
+		 position: absolute;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 left: 0;
+		 bottom: 0;
+	}
+	 .TestimonialCard > .inner .cardAuthorContainer > .inner {
+		 display: inline-block;
+		 width: auto;
+		 transform: translateY(100%);
+	}
+	 .TestimonialCard > .inner .cardAuthorContainer > .inner p {
+		 font-weight: 600;
+	}
+	 .AboutCard {
+		 height: 100%;
+		 min-height: 100vh;
+		 display: grid;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .AboutCard > .inner {
+		 max-width: 1180px;
+		 display: grid;
+		 grid-template-columns: 500px 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .AboutCard > .inner .imageParent {
+		 max-height: 600px;
+	}
+	 .AboutCard > .inner .contentContainer > .inner {
+		 padding-top: 50px;
+	}
+	 .AboutCard > .inner .contentContainer > .inner .title {
+		 display: inline-block;
+		 width: auto;
+		 position: absolute;
+		 top: -25px;
+	}
+	 .AboutCard > .inner .contentContainer > .inner .title > .inner {
+		 transform: translateY(-50%);
+	}
+	 .AboutCard > .inner .contentContainer > .inner .title > .inner h2 {
+		 font-size: 90px;
+		 line-height: 100px;
+		 color: #fff;
+		 font-family: "EB Garamond", Arial, Helvetica, sans-serif;
+		 padding: 0px 20px;
+	}
+	 .AboutCard > .inner .contentContainer > .inner .copy > .inner {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-gap: 0px;
+		 align-content: center;
+		 justify-content: start;
+		 align-items: center;
+	}
+	 .AboutCard > .inner .contentContainer > .inner .copy > .inner > .Button {
+		 display: inline-block;
+		 width: auto;
+		 margin-left: 0;
+	}
+	 .AboutCard > .inner .contentContainer > .inner .copy > .inner > .Button .outer .inner a {
+		 font-weight: 600;
+	}
+	 .StackCarousel > .outer > .inner {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-template-areas: "stack";
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .StackCarousel > .outer > .inner .item {
+		 grid-area: stack;
+		 opacity: 0;
+		 z-index: 0;
+		 transition: opacity 200ms ease;
+	}
+	 .StackCarousel > .outer > .inner .item.active {
+		 opacity: 1;
+		 z-index: 2;
+	}
+	 .StackCarousel.hasArrows > .outer {
+		 max-width: 1440px;
+		 width: 90%;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-template-areas: "arrowLeft carousel arrowRight";
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 grid-gap: 100px;
+	}
+	 .StackCarousel.hasArrows > .outer > .inner {
+		 grid-area: carousel;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer {
+		 height: 100%;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 opacity: 0.3;
+		 transition: opacity 200ms ease;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer.left {
+		 grid-area: arrowLeft;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer.left > .inner .arrow > .inner {
+		 border-bottom: 10px solid transparent;
+		 border-top: 10px solid transparent;
+		 border-right: 10px solid #fad762;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer.right {
+		 grid-area: arrowRight;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer.right > .inner .arrow > .inner {
+		 border-bottom: 10px solid transparent;
+		 border-top: 10px solid transparent;
+		 border-left: 10px solid #fad762;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer.active {
+		 opacity: 1;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer > .inner {
+		 height: 50px;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer > .inner .arrow {
+		 height: 100%;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 cursor: pointer;
+	}
+	 .StackCarousel.hasArrows > .outer .arrowContainer > .inner .arrow > .inner {
+		 width: 0px;
+		 height: 20px;
+		 border-radius: 3px;
+	}
+	 .StackCarousel.hasDots > .outer {
+		 max-width: 1180px;
+		 width: 90%;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-template-areas: "carousel" "dots";
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 grid-gap: 100px;
+	}
+	 .StackCarousel.hasDots > .outer > .inner {
+		 grid-area: carousel;
+	}
+	 .StackCarousel.hasDots > .outer .dotContainer {
+		 grid-area: dots;
+	}
+	 .StackCarousel.hasDots > .outer .dotContainer > .inner {
+		 display: grid;
+		 grid-gap: 20px;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .StackCarousel.hasDots > .outer .dotContainer > .inner .dot {
+		 width: 20px;
+		 height: 20px;
+		 opacity: 0.3;
+		 transition: opacity 200ms ease;
+		 cursor: pointer;
+	}
+	 .StackCarousel.hasDots > .outer .dotContainer > .inner .dot.active {
+		 opacity: 1;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer {
+		 max-width: 1440px;
+		 width: 90%;
+		 display: grid;
+		 grid-template-columns: 50px 1fr 50px;
+		 grid-template-areas: "arrowLeft carousel arrowRight" "dots dots dots";
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 grid-gap: 100px;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer > .inner {
+		 grid-area: carousel;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .arrowContainer {
+		 height: 100%;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .arrowContainer.left {
+		 grid-area: arrowLeft;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .arrowContainer.left > .inner .arrow > .inner {
+		 border-bottom: 10px solid transparent;
+		 border-top: 10px solid transparent;
+		 border-right: 10px solid #fad762;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .arrowContainer.right {
+		 grid-area: arrowRight;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .arrowContainer.right > .inner .arrow > .inner {
+		 border-bottom: 10px solid transparent;
+		 border-top: 10px solid transparent;
+		 border-left: 10px solid #fad762;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .arrowContainer > .inner {
+		 height: 50px;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .arrowContainer > .inner .arrow {
+		 height: 100%;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 cursor: pointer;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .arrowContainer > .inner .arrow > .inner {
+		 width: 0px;
+		 height: 20px;
+		 border-radius: 3px;
+	}
+	 .StackCarousel.hasArrows.hasDots > .outer .dotContianer {
+		 grid-area: dots;
+	}
+	 .Footer {
+		 background-color: #000;
+		 padding: 0 5%;
+	}
+	 .Footer::before {
+		 content: "";
+		 display: block;
+		 position: absolute;
+		 top: -20px;
+		 right: 0;
+		 height: 0;
+		 border-style: solid;
+		 border-width: 0px 0px 20px 98vw;
+		 border-color: transparent transparent #000 transparent;
+	}
+	 .Footer > .inner {
+		 max-width: 1920px;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 grid-gap: 0px;
+	}
+	 .Footer > .inner .upper {
+		 padding: 100px 0;
+		 border-bottom: 1px solid #fff;
+	}
+	 .Footer > .inner .upper > .inner {
+		 position: unset;
+	}
+	 .Footer > .inner .upper > .inner nav > .inner {
+		 display: grid;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 grid-gap: 100px;
+		 max-width: 600px;
+	}
+	 .Footer > .inner .upper > .inner nav > .inner .Button > .outer > .inner a {
+		 color: #fff;
+		 font-weight: 600;
+	}
+	 .Footer > .inner .upper > .inner nav > .inner .Button > .outer .tilt {
+		 transition: opacity 200ms ease;
+		 opacity: 0.1;
+	}
+	 .Footer > .inner .upper > .inner nav > .inner .Button > .outer:hover .tilt {
+		 opacity: 0.5;
+	}
+	 .Footer > .inner .lower {
+		 padding: 30px 0;
+	}
+	 .Footer > .inner .lower > .inner {
+		 display: grid;
+		 grid-template-columns: repeat(2, 1fr);
+		 grid-gap: 50px;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .Footer > .inner .lower > .inner .left > .inner {
+		 display: grid;
+		 grid-template-columns: repeat(2, auto);
+		 align-content: center;
+		 justify-content: start;
+		 align-items: center;
+		 grid-gap: 30px;
+	}
+	 .Footer > .inner .lower > .inner .left > .inner .ImageContainer > .inner {
+		 height: 50px;
+	}
+	 .Footer > .inner .lower > .inner .right > .inner nav > .inner {
+		 display: grid;
+		 grid-template-columns: repeat(3, auto);
+		 align-content: center;
+		 justify-content: end;
+		 align-items: center;
+		 grid-gap: 50px;
+	}
+	 .Footer > .inner .lower > .inner .right > .inner nav > .inner .Button > .outer > .inner a {
+		 color: #fff;
+		 font-size: 16px;
+		 line-height: 30px;
+	}
+	 .Footer > .inner .toTopContainer {
+		 position: fixed;
+		 width: 50px;
+		 height: 50px;
+		 bottom: 30px;
+		 right: 0;
+		 cursor: pointer;
+	}
+	 .Footer > .inner .toTopContainer::after {
+		 content: "";
+		 display: block;
+		 position: absolute;
+		 top: 0;
+		 left: 0;
+		 width: 100%;
+		 height: 100%;
+		 transform: rotate(-3deg) skew(2deg);
+		 background-color: #fff;
+		 opacity: 0.5;
+		 transition: opacity 200ms ease;
+	}
+	 .Footer > .inner .toTopContainer > .inner {
+		 height: 50px;
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .Footer > .inner .toTopContainer > .inner .toTop {
+		 width: 20px;
+		 height: 0px;
+		 border-left: 10px solid transparent;
+		 border-right: 10px solid transparent;
+		 border-bottom: 10px solid #000;
+		 border-radius: 3px;
+	}
+	 .Footer > .inner .toTopContainer:hover::after {
+		 opacity: 0.75;
+	}
+	 .Grid > .outer {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-gap: 50px;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .Grid > .outer > .inner {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-gap: 30px;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 text-align: center;
+	}
+	 .Grid > .outer > .inner > .item {
+		 display: none;
+		 height: 100%;
+	}
+	 .Grid > .outer > .inner > .item.active {
+		 display: block;
+	}
+	 .Grid > .outer > .paginationContainer {
+		 padding: 0 5%;
+	}
+	 .Grid > .outer > .paginationContainer > .inner {
+		 max-width: 1440px;
+		 text-align: center;
+	}
+	 .Grid > .outer > .paginationContainer > .inner > .Button > .outer {
+		 display: inline-block;
+		 width: auto;
+	}
+	 .Grid > .outer > .paginationContainer > .inner > .Button > .outer > .inner {
+		 display: inline-block;
+		 width: auto;
+	}
+	 .Grid > .outer > .paginationContainer > .inner > .Button > .outer > .inner p {
+		 font-weight: 600;
+	}
+	 .Grid > .outer > .paginationContainer > .inner > .Button > .outer > .inner a {
+		 font-weight: 600;
+	}
+	 .Grid > .outer > .paginationContainer.link > .inner > .Button > .outer > .inner a {
+		 display: inline-block;
+		 width: auto;
+		 padding: 0 40px;
+		 color: #fad762;
+	}
+	 .Grid > .outer > .paginationContainer.loadMore > .inner > .Button > .outer > .inner p {
+		 display: inline-block;
+		 width: auto;
+		 padding: 0 40px;
+		 color: #fad762;
+	}
+	 .Grid.grid-3-3-1 > .outer > .inner {
+		 grid-template-columns: repeat(3, 1fr);
+		 grid-gap: 120px;
+	}
+	 .Header {
+		 max-width: calc(1280px + 10%);
+		 padding: 30px 5%;
+		 z-index: 3;
+	}
+	 .Header > .inner {
+		 display: grid;
+		 grid-template-columns: 400px 1fr;
+		 grid-template-areas: 'logo navigation';
+		 grid-gap: 50px;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+		 position: unset;
+	}
+	 .Header > .inner .logo {
+		 height: 60px;
+		 grid-area: logo;
+		 cursor: pointer;
+		 z-index: 4;
+	}
+	 .Header > .inner .logo .ImageContainer > .inner {
+		 height: 60px;
+	}
+	 .Header > .inner nav {
+		 grid-area: navigation;
+	}
+	 .Header > .inner nav > .inner {
+		 display: grid;
+		 grid-gap: 100px;
+		 align-content: center;
+		 justify-content: end;
+		 align-items: center;
+	}
+	 .Header > .inner nav > .inner .Button.headerNav > .outer > .inner a {
+		 transition: color 100ms ease;
+	}
+	 .Header > .inner nav > .inner .Button.headerNav > .outer .tilt {
+		 opacity: 0;
+		 transition: opacity 200ms ease;
+	}
+	 .Header > .inner nav > .inner .Button.headerNav > .outer:hover > .inner a {
+		 color: #fad762;
+	}
+	 .Header > .inner nav > .inner .Button.headerNav > .outer:hover .tilt {
+		 opacity: 1;
+	}
+	 .Header > .inner .burgerMenuContainer {
+		 display: none;
+		 grid-area: burgerMenu;
+		 position: absolute;
+		 top: 0;
+		 right: 5%;
+		 width: 50px;
+		 height: 50px;
+		 cursor: pointer;
+		 z-index: 4;
+	}
+	 .Header > .inner .burgerMenuContainer::after {
+		 content: "";
+		 position: absolute;
+		 display: block;
+		 width: 100%;
+		 height: 105%;
+		 top: -5%;
+		 left: 0;
+		 background-color: #000;
+		 transform: rotate(-3deg) skewX(-4deg);
+	}
+	 .Header > .inner .burgerMenuContainer > .inner {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .Header > .inner .burgerMenuContainer > .inner .burgerMenu {
+		 width: 20px;
+		 height: 50px;
+		 background-position: center center;
+		 background-size: contain;
+		 background-repeat: no-repeat;
+	}
+	 .ImageContainer {
+		 max-height: 100%;
+		 overflow: hidden;
+		 display: grid;
+		 align-content: center;
+		 justify-content: center;
+		 align-items: center;
+	}
+	 .ImageContainer > .inner a {
+		 height: 100%;
+	}
+	 .ImageContainer > .inner img {
+		 max-height: 100%;
+		 object-fit: contain;
+	}
+	 .tilt {
+		 position: absolute;
+		 width: 120%;
+		 height: 120%;
+		 top: -10%;
+		 left: -10%;
+	}
+	 .tilt > .inner {
+		 height: 100%;
+	}
+}
+ @media only screen and (max-width: 1280px) {
+	 .Header > .inner {
+		 grid-template-columns: 300px 1fr;
+	}
+	 .Header > .inner nav > .inner {
+		 grid-gap: 50px;
+	}
+	 .BlogCard > .inner .contentContainer {
+		 padding: 20px;
+	}
+	 .BlogCard > .inner .contentContainer > .inner h3 {
+		 font-size: 30px;
+		 line-height: 40px;
+	}
+}
+ @media only screen and (max-width: 1080px) {
+	 .Header > .inner {
+		 grid-template-columns: 200px 1fr;
+	}
+	 .Header > .inner .logo {
+		 height: 40px;
+	}
+	 .Header > .inner .logo .ImageContainer > .inner {
+		 height: 40px;
+	}
+	 .BlogCard > .inner .contentContainer {
+		 padding: 20px;
+	}
+	 .BlogCard > .inner .contentContainer > .inner h3 {
+		 font-size: 25px;
+		 line-height: 35px;
+	}
+}
+ @media only screen and (max-width: 880px) {
+	 .Header > .inner {
+		 grid-template-columns: 1fr;
+		 grid-template-areas: 'logo';
+		 max-width: 300px;
+	}
+	 .Header > .inner .navigation {
+		 display: grid;
+		 position: fixed;
+		 right: 0;
+		 top: 0;
+		 height: 100vh;
+		 width: 0vw;
+		 overflow: hidden;
+		 overflow-y: scroll;
+		 align-content: space-between;
+		 justify-content: end;
+		 align-items: center;
+		 padding: 150px 0 30px 0;
+		 background-color: #fad762;
+		 transition: width 200ms ease;
+	}
+	 .Header > .inner .navigation.active {
+		 width: 100vw;
+	}
+	 .Header > .inner .navigation.active > .inner .Button > .outer {
+		 opacity: 1;
+		 transition: opacity 100ms ease;
+	}
+	 .Header > .inner .navigation::-webkit-scrollbar {
+		 display: none;
+	}
+	 .Header > .inner .navigation > .inner {
+		 grid-template-columns: 1fr !important;
+		 text-align: right;
+		 min-width: 300px;
+		 padding: 0 5vw;
+	}
+	 .Header > .inner .navigation > .inner .Button > .outer {
+		 opacity: 0;
+		 transition: opacity 300ms ease;
+	}
+	 .Header > .inner .burgerMenuContainer {
+		 display: block;
+	}
+	 .BlogCard > .inner .contentContainer {
+		 padding: 40px;
+	}
+	 .Footer > .inner .upper {
+		 padding: 50px 0 20px 0;
+	}
+	 .Footer > .inner .upper > .inner nav > .inner {
+		 display: block;
+		 text-align: center;
+	}
+	 .Footer > .inner .upper > .inner nav > .inner .Button > .outer {
+		 width: auto;
+		 display: inline-block;
+		 margin: 0 30px 30px 30px;
+	}
+	 .Footer > .inner .upper > .inner .toTopContainer {
+		 display: none;
+	}
+	 .Footer > .inner .lower > .inner {
+		 grid-template-columns: repeat(1, 1fr);
+		 grid-template-areas: "top" "bottom";
+		 grid-gap: 30px;
+	}
+	 .Footer > .inner .lower > .inner .left {
+		 grid-area: bottom;
+	}
+	 .Footer > .inner .lower > .inner .left > .inner {
+		 justify-content: center;
+	}
+	 .Footer > .inner .lower > .inner .right {
+		 grid-area: top;
+	}
+	 .Footer > .inner .lower > .inner .right > .inner nav > .inner {
+		 display: block;
+		 text-align: center;
+	}
+	 .Footer > .inner .lower > .inner .right > .inner nav > .inner .Button .outer {
+		 display: inline-block;
+		 width: auto;
+		 margin: 0 10px 10px 10px;
+	}
+}
+ @media only screen and (max-width: 480px) {
+	 .Header > .inner {
+		 max-width: 200px;
+	}
+}
+ @media only screen and (max-width: 380px) {
+	 .Header > .inner {
+		 max-width: 150px;
+	}
+}
+ 
