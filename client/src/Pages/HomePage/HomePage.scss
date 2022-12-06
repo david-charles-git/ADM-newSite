@@ -369,6 +369,16 @@
 
 			.OurWorkSection {
 				>.inner {
+					grid-gap: 50px;
+
+					.titleContainer {
+						>.inner {
+							h1 {
+								font-size: 40px;
+								line-height: 50px;
+							}
+						}
+					}
 					.SlideCarousel {
 						> .outer {
 							grid-template-columns: 1fr !important;
@@ -380,7 +390,7 @@
 							}
 
 							>.inner {
-								grid-gap: 40px;
+								grid-gap: 50px;
 
 								.item {
 									width: 80vw;
@@ -390,6 +400,16 @@
 									.SlideCarouselBlogCard {
 										>.inner {
 											.contentContainer {
+												.imageParent {
+													>.ImageContainer {
+														>.inner {
+															img {
+																height: 420px;
+															}
+														}
+													}
+
+												}
 												>.inner {
 													p {
 														color: #ffffff;

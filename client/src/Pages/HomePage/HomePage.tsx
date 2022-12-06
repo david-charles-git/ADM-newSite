@@ -142,7 +142,7 @@ const HomePage : React.FC<HomePageInterface> = (props : HomePageInterface) => {
 
                 <OurWorkSection data={ourWorkSectionData} />
 
-                <AboutSection data={aboutSectionData} />
+                {/* <AboutSection data={aboutSectionData} /> */}
                 
                 <TestimonialSection data={testimonialSectionData} />
 

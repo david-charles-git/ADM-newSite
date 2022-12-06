@@ -32,7 +32,7 @@ const StackCarousel : React.FC<StackCarouselInterface> = (props : StackCarouselI
     var [activeStackCount, setActiveStackCount] = useState<number>(0);
     var [leftArrowIsActive, setLeftArrowIsActive] = useState<boolean>(false);
     var [rightArrowIsActive, setRightArrowIsActive] = useState<boolean>(true);
-    var [carouselTouchStartValue, setCarouselTouchStartValue] = useState<number>(0)
+    var [carouselTouchStartValue, setCarouselTouchStartValue] = useState<number>(0);
 
     //Functions
     const handleIncreaseActiveStackCount : () => void = () => {

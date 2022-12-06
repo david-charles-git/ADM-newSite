@@ -595,6 +595,11 @@
 @container slideCarousel (inline-size < 1740px) {
     .outer {
         grid-template-columns: 50px calc(90vw - 300px) 50px !important;
+
+        .dotContainer {
+            max-width: 90vw;
+            margin-left: 0;
+        }
     }
 }
 
@@ -616,6 +621,10 @@
             }
 
             >.inner {
+
+            }
+
+            .dotContainer {
 
             }
         }

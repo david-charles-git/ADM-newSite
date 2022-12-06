@@ -23,7 +23,6 @@
 
         .logo {
             grid-area: logo;
-            z-index: 4;
 
             .ImageContainer {
                 justify-content: start;
@@ -126,10 +125,10 @@
                 overflow: hidden;
                 overflow-y: scroll;
                 align-content: space-between;
-                justify-content: end;
+                justify-content: center;
                 align-items: center;
-                padding: 150px 0 30px 0;
-                background-color: $clrMustard;
+                padding: 150px 0;
+                background-color: $clrBlack;
                 transition: width 200ms ease;
 
                 &.active {
@@ -156,12 +155,16 @@
                     padding: 0 5vw;
 
                     .Button {
-                        display: inline-block;
-                        width: auto;
-
                         >.outer{
                             opacity: 0;
                             transition: opacity 300ms ease;
+
+                            >.inner {
+                                a, p {
+                                    text-align:center;
+                                    color: $clrMustard;
+                                }
+                            }
                         }
                     }
                 }

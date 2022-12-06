@@ -4,7 +4,7 @@
 */
 
 //Dependencies
-import React from "react";
+import React, { useEffect } from "react";
 import {Children, useState} from "react";
 
 //Components
@@ -33,6 +33,9 @@ const SlideCarousel : React.FC<SlideCarouselInterface> = (props : SlideCarouselI
     var [leftArrowIsActive, setLeftArrowIsActive] = useState<boolean>(false);
     var [rightArrowIsActive, setRightArrowIsActive] = useState<boolean>(true);
     var [carouselInnerTranslateXValue, setCarouselInnerTranslateXValue] = useState<number>(0);
+    var [translationAmount, setTranslationAmount] = useState<number>(800);
+    var [translationBufferAmount, setTranslationBufferAmount] = useState<number>(100);
+    var [carouselTouchStartValue, setCarouselTouchStartValue] = useState<number>(0);
 
     //Functions
     const handleIncreaseActiveStackCount : () => void = () => {
@@ -45,7 +48,7 @@ const SlideCarousel : React.FC<SlideCarouselInterface> = (props : SlideCarouselI
 
         }
 
-        const newCarouselInnerTranslateXValue : number = (newActivestackCount * 800) + ( newActivestackCount * 100 );
+        const newCarouselInnerTranslateXValue : number = (newActivestackCount * translationAmount) + ( newActivestackCount * translationBufferAmount );
 
         setActiveStackCount(newActivestackCount);
         setLeftArrowIsActive(true);
@@ -61,7 +64,7 @@ const SlideCarousel : React.FC<SlideCarouselInterface> = (props : SlideCarouselI
 
         }
 
-        const newCarouselInnerTranslateXValue : number = (newActivestackCount * 800) + ( newActivestackCount * 100 );
+        const newCarouselInnerTranslateXValue : number = (newActivestackCount * translationAmount) + ( newActivestackCount * translationBufferAmount );
 
         setActiveStackCount(newActivestackCount);
         setRightArrowIsActive(true);
@@ -88,10 +91,39 @@ const SlideCarousel : React.FC<SlideCarouselInterface> = (props : SlideCarouselI
 
         }
         
-        const newCarouselInnerTranslateXValue : number = (newActivestackCount * 800) + ( newActivestackCount * 100 );
+        const newCarouselInnerTranslateXValue : number = (newActivestackCount * translationAmount) + ( newActivestackCount * translationBufferAmount );
 
         setActiveStackCount(newActivestackCount);
         setCarouselInnerTranslateXValue(newCarouselInnerTranslateXValue);
+    };
+    const handleSetTranslationAmounts : () => void = () => {
+        const windowBreakPoint : number = 768;
+        const windowWidth : number = window.innerWidth;
+        const newTranslationBufferAmount : number = windowWidth <= windowBreakPoint ? 50 : 100;
+        var newTranslationAmount : number = windowWidth <= windowBreakPoint ? 350 : 800;
+
+        newTranslationAmount = newTranslationAmount > (windowWidth * 0.8) ? (windowWidth * 0.8) : newTranslationAmount;
+
+        setTranslationAmount(newTranslationAmount);
+        setTranslationBufferAmount(newTranslationBufferAmount);
+    };
+    const handleCarouselTouchStart : (event : any) => void = (event) => {
+        const touchXPosition : number = event.touches[0].clientX;
+        
+        setCarouselTouchStartValue(touchXPosition);
+    };
+    const handleCarouselTouchEnd : (event : any) => void = (event) => {
+        const touchXPosition : number = event.changedTouches[0].clientX;
+
+        if (touchXPosition >= carouselTouchStartValue) {
+            handleDecreaseActiveStackCount();
+            
+        } else if (touchXPosition < carouselTouchStartValue) {
+            handleIncreaseActiveStackCount();
+
+        } else {
+            //do nothing
+        }
     };
 
     //Variables
@@ -100,6 +132,13 @@ const SlideCarousel : React.FC<SlideCarouselInterface> = (props : SlideCarouselI
     var SlideCarouselClass : string = carouselClass ? "SlideCarousel " + carouselClass : "SlideCarousel";
         SlideCarouselClass = carouselHasArrows ? SlideCarouselClass + " hasArrows" : SlideCarouselClass;
         SlideCarouselClass = carouselHasDots ? SlideCarouselClass + " hasDots" : SlideCarouselClass;
+
+    //Effects
+    useEffect(() => {
+        window.addEventListener("load", handleSetTranslationAmounts);
+        window.addEventListener("resize", handleSetTranslationAmounts);
+        window.addEventListener("resize", () => { setActiveStackCount(0); setLeftArrowIsActive(false); setRightArrowIsActive(true); setCarouselInnerTranslateXValue(0); });
+    }, [])
 
     return (
         <div className={SlideCarouselClass}>
@@ -119,7 +158,7 @@ const SlideCarousel : React.FC<SlideCarouselInterface> = (props : SlideCarouselI
                         <></>
                 }
                 
-                <div className="inner" style={{ transform : "translateX(-" + carouselInnerTranslateXValue + "px)" }}>
+                <div className="inner" style={{ transform : "translateX(-" + carouselInnerTranslateXValue + "px)" }} onTouchStart={ handleCarouselTouchStart } onTouchEnd={ handleCarouselTouchEnd } onTouchCancel={ handleCarouselTouchEnd }>
                     {
                         childrenCount > 0 ?
                             Children.map(props.children, (child : React.ReactNode | React.ReactElement, key : number) => {
